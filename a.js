@@ -23,3 +23,21 @@ var unit = items[i].getElementsByTagName("td")[0].classList[0]; // 클래스 이
   }
   document.getElementById("output-text").innerHTML = outputText;
 }
+
+
+// increment 함수에 추가
+function increment(id) {
+  var input = document.getElementById(id);
+  input.value = parseInt(input.value) + 1;
+  event.preventDefault(); // 버튼 클릭 시 기본 동작 막기
+}
+
+// decrement 함수에 추가
+function decrement(id) {
+  var input = document.getElementById(id);
+  if (parseInt(input.value) > 0) {
+    input.value = parseInt(input.value) - 1;
+  }
+  event.preventDefault(); // 버튼 클릭 시 기본 동작 막기
+}
+
