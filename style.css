@@ -8,4 +8,5 @@ html {
 
   th:nth-child(2) {
     width: 30%;
+    background-color:red;
   }
