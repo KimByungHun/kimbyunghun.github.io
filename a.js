@@ -41,3 +41,14 @@ function decrement(id) {
   event.preventDefault(); // 버튼 클릭 시 기본 동작 막기
 }
 
+const tdElements = document.querySelectorAll('td');
+
+tdElements.forEach(td => {
+  td.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+      event.preventDefault();
+    }
+  });
+});
+
+
