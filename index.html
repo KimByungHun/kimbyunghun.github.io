@@ -80,7 +80,13 @@ function handleTouchMove(evt) {
 };
 
 </script>
-
+<script>
+  document.addEventListener('touchstart', function(e) {
+    if (e.touches.length > 1) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+</script>
 </head>
 <body>
 	<h1>Shopping List</h1>
@@ -113,13 +119,7 @@ function handleTouchMove(evt) {
 	<button onclick="output()">Output</button>
 	<p id="output-text"></p>
 	<script src="app.js"></script>
-<script>
-  document.addEventListener('touchstart', function(e) {
-    if (e.touches.length > 1) {
-      e.preventDefault();
-    }
-  }, { passive: false });
-</script>
+
 
 </body>
 </html>
