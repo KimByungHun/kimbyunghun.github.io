@@ -47,6 +47,40 @@ html, table, tbody {
         }
   </style>
 
+<script>
+document.querySelector('tbody').addEventListener('touchstart', handleTouchStart, false);        
+document.querySelector('tbody').addEventListener('touchmove', handleTouchMove, false);
+
+let xDown = null;                                                        
+let yDown = null;
+
+function handleTouchStart(evt) {                                         
+    xDown = evt.touches[0].clientX;                                      
+    yDown = evt.touches[0].clientY;                                      
+};                                                
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    let xUp = evt.touches[0].clientX;                                    
+    let yUp = evt.touches[0].clientY;
+
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        evt.preventDefault();
+    } else {
+        /* reset values */
+        xDown = null;
+        yDown = null;                                             
+    }
+};
+
+</script>
+
 </head>
 <body>
 	<h1>Shopping List</h1>
