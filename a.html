@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping List</title>
+    <script src="a.js"></script>
+</head>
+<body>
+	<h1>Shopping List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Item</th>
+				<th>Quantity</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Bananas</td>
+				<td><input type="number" id="bananas" value="0" min="0"></td>
+				<td><button onclick="increment('bananas')">+</button><button onclick="decrement('bananas')">-</button></td>
+			</tr>
+			<tr>
+				<td>Apples</td>
+				<td><input type="number" id="apples" value="0" min="0"></td>
+				<td><button onclick="increment('apples')">+</button><button onclick="decrement('apples')">-</button></td>
+			</tr>
+			<tr>
+				<td>Oranges</td>
+				<td><input type="number" id="oranges" value="0" min="0"></td>
+				<td><button onclick="increment('oranges')">+</button><button onclick="decrement('oranges')">-</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<button onclick="output()">Output</button>
+	<p id="output-text"></p>
+	<script src="app.js"></script>
+</body>
+</html>
