@@ -17,7 +17,8 @@ function output() {
       var quantity = parseInt(items[i].getElementsByTagName("input")[0].value);
       if (quantity > 0) {
           var name = items[i].getElementsByTagName("td")[0].innerHTML;
-          outputText += name + " - " + quantity + "<br>";
+var unit = items[i].getElementsByTagName("td")[0].classList[0]; // 클래스 이름으로 출력 단위를 가져옴
+          outputText += name + " - " + quantity + " " + unit + "<br>";
       }
   }
   document.getElementById("output-text").innerHTML = outputText;
